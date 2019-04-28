@@ -1,27 +1,17 @@
-# CheeseRestAngular
+<h2>Spring REST cheesy example</h2>
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.8.
+<h3>This module is designed for https://github.com/rintaspon/cheese-rest-spring as its client side.</h3>
 
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+<p><b>Related keys:</b></p>
+<ul>
+  <li>Representational state transfer (REST)</li>
+  <li>Data Transfer Object (DTO)</li>
+	<li>HTTP status codes</li>
+</ul>
+<p><b>Scenario:</b></p>
+<p>We have milk and want to produce cheese! so that we throw it to a cheese maker (Server).
+Before the milk is sent to the server as well-known JSON format, there are some activities here:</p>
+<ol>
+  <li>Users input milk type and its volume into a html page. The html page contains a form, which is implemented by using <i>Angular's FormGroup</i>, <i>Angular's FormControl</i>, some response texts representing results from server such as HTTP response.</li>
+	<li>After submit button is pressed, the html page will send the data to a typescript file (.ts). The .ts file contains a service named 'CheeseMakerService' which is used for sending Milk to CheeseMaker (Server). Both of <i>JSON.stringify(..)</i> and Milk entity are required for completing the sending process.</li>
+</ol>
