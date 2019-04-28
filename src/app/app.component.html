@@ -1,3 +1,4 @@
+<!--Created by Rintaspon on 28 April 2019-->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,47 +13,53 @@
 
 <body>
   <div class="container-fluid">
-    <div class="row">
+    <div class="row" style="padding: 5em 5em 5em 5em">
       <div class="col-md-8">
         <h3 class="text-center">
-          h3. Lorem ipsum dolor sit amet.
+          Request to Cheese Maker
         </h3>
-        <form role="form">
+        <form [formGroup]="milkForm" role="form">
           <div class="form-group">
-            <label for="exampleInputEmail1">
-              Email address
+            <label for="milkType">
+              Milk type
             </label>
-            <input type="email" class="form-control" id="exampleInputEmail1">
-          </div>
-          <div class="form-group">
-            <label for="exampleInputPassword1">
-              Password
-            </label>
-            <input type="password" class="form-control" id="exampleInputPassword1">
+            <input formControlName="milkType" type="text" class="form-control" id="milkType"
+              placeholder="Type 'Cow's milk' or 'Goat's milk'">
           </div>
           <div class="form-group">
-            <label for="exampleInputFile">
-              File input
+            <label for="milkType">
+              Milk volume
             </label>
-            <input type="file" class="form-control-file" id="exampleInputFile">
-            <p class="help-block">
-              Example block-level help text here.
-            </p>
+            <input formControlName="milkVolume" type="text" class="form-control" id="milkVolume"
+              placeholder="Type number here (1 or 0.452 ..)">
           </div>
-          <div class="checkbox">
-            <label>
-              <input type="checkbox"> Check me out
-            </label>
+          <div style="text-align: center">
+            <button type="button" class="btn btn-primary" (click)="submit()">
+              Submit
+            </button>
           </div>
-          <button type="submit" class="btn btn-primary">
-            Submit
-          </button>
         </form>
       </div>
       <div class="col-md-4">
-        <h3 class="text-success text-center">
-          h3. Lorem ipsum dolor sit amet.
+        <h3 class="text-center" style="margin-bottom: 1em">
+          Response from Cheese Maker
         </h3>
+        <h4 *ngIf="isSuccess==true" class="text-success text-center" style="margin-bottom: 1em">
+          Success
+        </h4>
+        <h4 *ngIf="isSuccess==false" class="text-danger  text-center" style="margin-bottom: 1em">
+          Failed
+        </h4>
+        <p>
+          <b class="text-center">
+            HTTP Status: [{{httpStatus}}]
+          </b>
+        </p>
+        <p>
+          <b class="text-center">
+            Message: [{{message | json}}]
+          </b>
+        </p>
       </div>
     </div>
   </div>
